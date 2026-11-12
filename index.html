@@ -579,7 +579,7 @@ html{scroll-behavior:auto}
 <div aria-hidden="true" class="lp-glow" style="position: absolute; inset: -2px; border-radius: 30px; pointer-events: none;"></div>
 <span style="position: absolute; top: -16px; right: 32px; padding: 7px 16px; border-radius: 999px; background: #C9963A; color: #1F1B16; font-size: 14px; font-weight: 800;">הכול עליי</span>
 <div style="display: flex; flex-direction: column; gap: 8px;">
-<h3 style="margin: 0; font-size: 24px; font-weight: 800;">עמוד תדמית + כתיבת תוכן</h3>
+<h3 style="margin: 0; font-size: 24px; font-weight: 800;">עמוד תדמית + קופירייטינג</h3>
 </div>
 <div style="display: flex; align-items: baseline; gap: 6px;">
 <span class="lp-price lp-p2" style="font-family: 'Secular One', sans-serif; font-size: 56px; line-height: 1;"><span class="lp-static">3,000</span></span>
@@ -591,7 +591,7 @@ html{scroll-behavior:auto}
 <li style="display: flex; gap: 10px; align-items: flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A6E22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L19 7"></path></svg>טופס השארת פרטים</li>
 <li style="display: flex; gap: 10px; align-items: flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A6E22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L19 7"></path></svg>סבב תיקונים אחד</li>
 <li style="display: flex; gap: 10px; align-items: flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A6E22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L19 7"></path></svg>שיחת היכרות על העסק והקהל שלכם</li>
-<li style="display: flex; gap: 10px; align-items: flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A6E22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L19 7"></path></svg>כתיבה שיווקית מלאה של כל התכנים בעמוד</li>
+<li style="display: flex; gap: 10px; align-items: flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A6E22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L19 7"></path></svg>קופירייטינג מלא של כל התכנים בעמוד</li>
 <li style="display: flex; gap: 10px; align-items: flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A6E22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L19 7"></path></svg>ניסוח מסרים שמדברים בול לקהל היעד שלכם</li>
 <li style="display: flex; gap: 10px; align-items: flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A6E22" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L19 7"></path></svg>כותרות וטקסטים לכפתורים שמניעים לפעולה</li>
 </ul>
@@ -695,8 +695,8 @@ html{scroll-behavior:auto}
 <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 10px;">
 <legend style="padding: 0; margin-bottom: 10px; font-size: 15px; font-weight: 700;">איזו חבילה מעניינת אתכם?</legend>
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-<label class="lp-radio" style="flex: 1 1 150px; position: relative;"><input type="radio" name="package" value="basic"><span>בלי כתיבת תוכן</span></label>
-<label class="lp-radio" style="flex: 1 1 150px; position: relative;"><input type="radio" name="package" value="content"><span>עם כתיבת תוכן</span></label>
+<label class="lp-radio" style="flex: 1 1 150px; position: relative;"><input type="radio" name="package" value="basic"><span>בלי קופירייטינג</span></label>
+<label class="lp-radio" style="flex: 1 1 150px; position: relative;"><input type="radio" name="package" value="content"><span>עם קופירייטינג</span></label>
 <label class="lp-radio" style="flex: 1 1 150px; position: relative;"><input type="radio" name="package" value="unsure" checked="checked"><span>עוד לא החלטתי</span></label>
 </div>
 </fieldset>
@@ -785,7 +785,7 @@ const TEMPLATE_TO_CLIENT = 'TEMPLATE_ID_CLIENT';  // המייל ללקוח
 
 (function () {
   const PRIZES = ['תמונה שיווקית בצבעי הלוגו', 'סרטון שיווקי קצר', 'כפתור וואטסאפ צף בעמוד', 'סבב תיקונים מרוכז נוסף'];
-  const PACKAGES = { basic: 'עמוד תדמית (2,000 ₪)', content: 'עמוד תדמית + כתיבת תוכן (3,000 ₪)', unsure: 'עוד לא החלטתי' };
+  const PACKAGES = { basic: 'עמוד תדמית (2,000 ₪)', content: 'עמוד תדמית + קופירייטינג (3,000 ₪)', unsure: 'עוד לא החלטתי' };
   const st = { sent: false, wheelOpen: false, shown: false, spinning: false, spun: false, prize: -1, rot: 0, sending: false };
 
   try {
