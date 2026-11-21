@@ -213,7 +213,6 @@ html{scroll-behavior:auto}
 }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 <a href="#main" class="lp-skip">דלג לתוכן המרכזי</a>
@@ -718,6 +717,7 @@ html{scroll-behavior:auto}
 <label for="lp-msg" style="font-size: 15px; font-weight: 700;">משהו שחשוב לכם שאדע?</label>
 <textarea id="lp-msg" name="message" class="lp-input" rows="3" placeholder="לא חובה" style="resize: vertical; min-height: 96px;"></textarea>
 </div>
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"><label>אל תמלאו שדה זה<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; line-height: 1.6; color: #4A4238; cursor: pointer;">
 <input type="checkbox" name="consent" required="required" style="flex: none; width: 20px; height: 20px; margin: 2px 0 0; accent-color: #9A6E22;">
 <span>הפרטים שמסרתי ישמשו ליצירת קשר בנוגע לפנייה בלבד, בהתאם ל<a href="privacy.html" style="color: #7A5718; font-weight: 700;">מדיניות הפרטיות</a>.</span>
@@ -796,10 +796,7 @@ html{scroll-behavior:auto}
 
 <script>
 /* ===== הגדרות EmailJS – למלא פעם אחת ===== */
-const EMAILJS_PUBLIC_KEY = '5K7J_rqkgQSRfgdWz';
-const EMAILJS_SERVICE_ID = 'service_5fvcphk';
-const TEMPLATE_TO_OWNER  = 'TEMPLATE_ID_OWNER';   // המייל שמגיע אלייך
-const TEMPLATE_TO_CLIENT = 'TEMPLATE_ID_CLIENT';  // המייל ללקוח
+const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
 /* ========================================= */
 
 (function () {
@@ -812,7 +809,6 @@ const TEMPLATE_TO_CLIENT = 'TEMPLATE_ID_CLIENT';  // המייל ללקוח
     if (saved !== null && PRIZES[+saved]) { st.spun = true; st.shown = true; st.prize = +saved; }
   } catch (e) {}
 
-  if (window.emailjs) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
   function vals() {
     const hasPrize = st.spun && st.prize >= 0;
@@ -891,8 +887,8 @@ const TEMPLATE_TO_CLIENT = 'TEMPLATE_ID_CLIENT';  // המייל ללקוח
     err.style.display = 'none';
     st.sending = true; btn.disabled = true; const label = btn.firstChild.textContent; btn.firstChild.textContent = 'שולח… ';
     try {
-      await emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_TO_OWNER, params);
-      try { await emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_TO_CLIENT, params); } catch (x) {}
+      const res = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: g('name'), email: g('email'), phone: g('phone'), business: g('business'), package: g('package'), message: g('message'), bonus: g('bonus'), website: g('website') }) });
+      if (!res.ok) throw new Error('send failed');
       form.reset(); set({ sent: true });
       document.getElementById('lead').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (x) {
