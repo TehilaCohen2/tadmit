@@ -321,7 +321,7 @@ var v=document.getElementById('demo-view'),f=document.getElementById('demo-frame
 function fit(){var w=v.clientWidth||512,k=w/1100;f.style.transform='scale('+k+')';f.style.height=(v.clientHeight/k)+'px';}
 fit();addEventListener('resize',fit);
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-var DOWN=26000,PAUSE=1800,UP=2600,t0=null,paused=false,idleTimer=null;
+var DOWN=16000,PAUSE=1500,UP=2200,t0=null,paused=false,idleTimer=null;
 function win(){try{return f.contentWindow;}catch(e){return null;}}
 function maxY(w){var d=w.document.documentElement;return Math.max(0,d.scrollHeight-w.innerHeight);}
 function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
