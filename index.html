@@ -319,6 +319,7 @@ body.a11y-high .lp-input,body.a11y-high input,body.a11y-high textarea,body.a11y-
 <span style="margin-left: 12px; flex: 1; height: 24px; border-radius: 8px; background: #FFFFFF; border: 1px solid #F0E6D4; display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: #8C8274; box-sizing: border-box; overflow: hidden; white-space: nowrap;">shlomo-nadlan.co.il</span>
 </div>
 <div class="rc-view" id="demo-view" style="height: 460px; background: #F2F3F6; position: relative;">
+<button type="button" id="demo-pause" aria-pressed="false" style="position:absolute;bottom:10px;left:10px;z-index:5;min-height:44px;padding:8px 16px;border-radius:999px;border:2px solid #1F1B16;background:#FFFFFF;color:#1F1B16;font:inherit;font-size:14px;font-weight:700;cursor:pointer;">השהיית הגלילה האוטומטית</button>
 <iframe id="demo-frame" src="demo/shlomo-nadlan.html" title="דוגמה חיה: אתר של שלמה נדל&quot;ן. אפשר לגלול ולנסות" loading="lazy" style="position: absolute; top: 0; right: 0; width: 1100px; height: 920px; border: 0; transform-origin: top right;"></iframe>
 </div>
 <script>(function(){
@@ -332,7 +333,7 @@ function maxY(w){var d=w.document.documentElement;return Math.max(0,d.scrollHeig
 function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
 function tick(){var ts=Date.now();
   var w=win();
-  if(w&&w.document&&w.document.readyState==='complete'&&!paused&&!reduce&&!document.body.classList.contains('a11y-noanim')){
+  if(w&&w.document&&w.document.readyState==='complete'&&!paused&&!window.__demoPaused&&!reduce&&!document.body.classList.contains('a11y-noanim')){
     if(t0===null)t0=ts;
     var e=ts-t0,m=maxY(w),y;
     if(e<PAUSE)y=0;
@@ -350,6 +351,7 @@ v.addEventListener('pointerleave',later);
 v.addEventListener('touchstart',stop,{passive:true});
 v.addEventListener('touchend',later,{passive:true});
 f.addEventListener('load',function(){try{f.contentWindow.addEventListener('wheel',stop,{passive:true});f.contentWindow.addEventListener('pointerdown',stop);f.contentWindow.document.addEventListener('mouseleave',later);}catch(e){}});
+var pb=document.getElementById('demo-pause');pb.addEventListener('click',function(){window.__demoPaused=!window.__demoPaused;pb.setAttribute('aria-pressed',window.__demoPaused?'true':'false');pb.textContent=window.__demoPaused?'המשך גלילה אוטומטית':'השהיית הגלילה האוטומטית';});
 setInterval(tick,40);
 })();</script>
 </div>
@@ -886,7 +888,7 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
         } catch (x) { res = { ok: false, error: 'net' }; }
         if (!res.ok) {
           err.textContent = res.error === 'taken' ? 'המועד שבחרתם כבר נתפס. אפשר לבחור מועד אחר ולשלוח שוב.' : 'לא הצלחנו לקבוע את המועד. אפשר לנסות שוב, או לשלוח בלי בחירת מועד ואחזור אליכם לתיאום.';
-          err.style.display = 'block';
+          err.style.display = 'block'; err.setAttribute('tabindex', '-1'); err.focus();
           if (res.error === 'taken') await loadSlots();
           return;
         }
@@ -899,7 +901,7 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
       document.getElementById('lead').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (x) {
       err.textContent = 'השליחה לא הצליחה. אפשר לנסות שוב או לכתוב לי בוואטסאפ: 053-315-3356';
-      err.style.display = 'block';
+      err.style.display = 'block'; err.setAttribute('tabindex', '-1'); err.focus();
     } finally {
       st.sending = false; btn.disabled = false; btn.firstChild.textContent = label;
     }
