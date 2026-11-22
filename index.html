@@ -289,7 +289,37 @@ html{scroll-behavior:auto}
 <div class="rc-view" id="demo-view" style="height: 460px; background: #F2F3F6; position: relative;">
 <iframe id="demo-frame" src="demo/shlomo-nadlan.html" title="דוגמה חיה: אתר של שלמה נדל&quot;ן. אפשר לגלול ולנסות" loading="lazy" style="position: absolute; top: 0; right: 0; width: 1100px; height: 920px; border: 0; transform-origin: top right;"></iframe>
 </div>
-<script>(function(){var v=document.getElementById('demo-view'),f=document.getElementById('demo-frame');function fit(){var w=v.clientWidth||512,k=w/1100;f.style.transform='scale('+k+')';f.style.height=(v.clientHeight/k)+'px';}fit();addEventListener('resize',fit);})();</script>
+<script>(function(){
+var v=document.getElementById('demo-view'),f=document.getElementById('demo-frame');
+function fit(){var w=v.clientWidth||512,k=w/1100;f.style.transform='scale('+k+')';f.style.height=(v.clientHeight/k)+'px';}
+fit();addEventListener('resize',fit);
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var DOWN=26000,PAUSE=1800,UP=2600,t0=null,paused=false,idleTimer=null;
+function win(){try{return f.contentWindow;}catch(e){return null;}}
+function maxY(w){var d=w.document.documentElement;return Math.max(0,d.scrollHeight-w.innerHeight);}
+function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function tick(){var ts=Date.now();
+  var w=win();
+  if(w&&w.document&&w.document.readyState==='complete'&&!paused&&!reduce){
+    if(t0===null)t0=ts;
+    var e=ts-t0,m=maxY(w),y;
+    if(e<PAUSE)y=0;
+    else if(e<PAUSE+DOWN)y=m*((e-PAUSE)/DOWN);
+    else if(e<PAUSE+DOWN+PAUSE)y=m;
+    else if(e<PAUSE+DOWN+PAUSE+UP)y=m*(1-ease((e-PAUSE-DOWN-PAUSE)/UP));
+    else{t0=ts;y=0;}
+    w.scrollTo(0,y);
+  }
+}
+function stop(){paused=true;clearTimeout(idleTimer);}
+function later(){clearTimeout(idleTimer);idleTimer=setTimeout(function(){var w=win();t0=null;paused=false;if(w){/* resume from current spot */var m=maxY(w);var frac=m?w.scrollY/m:0;t0=Date.now()-(1800+26000*frac);}},4000);}
+v.addEventListener('pointerenter',stop);
+v.addEventListener('pointerleave',later);
+v.addEventListener('touchstart',stop,{passive:true});
+v.addEventListener('touchend',later,{passive:true});
+f.addEventListener('load',function(){try{f.contentWindow.addEventListener('wheel',stop,{passive:true});f.contentWindow.addEventListener('pointerdown',stop);f.contentWindow.document.addEventListener('mouseleave',later);}catch(e){}});
+setInterval(tick,40);
+})();</script>
 </div>
 <div class="rc-toast" style="position: absolute; bottom: 0; right: -10px; display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: #FFFFFF; border-radius: 18px; box-shadow: 0 24px 50px -20px rgba(90,64,20,.4), 0 0 0 1px #F0E6D4; transform: rotate(2deg);">
 <span style="position: relative; width: 42px; height: 42px; border-radius: 12px; background: #E3F4EA; display: flex; align-items: center; justify-content: center;">
