@@ -559,12 +559,8 @@ setInterval(tick,40);
 <div role="status" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; padding: 48px 12px;">
 <span style="width: 76px; height: 76px; border-radius: 50%; background: #E3F4EA; display: flex; align-items: center; justify-content: center;"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1E7A48" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"></path></svg></span>
 <h3 style="margin: 0; font-family: 'Secular One', sans-serif; font-weight: 400; font-size: 32px;">תודה! הפנייה התקבלה</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #4A4238; max-width: 360px;">אפשר לבחור מועד לשיחה בעצמכם ביומן שמתחת, ואם נוח יותר, אחזור אליכם בהקדם לתיאום.</p>
-<div style="width: 100%; margin-top: 8px; padding: 18px 14px 6px; border-radius: 20px; background: #FFF6E4; box-sizing: border-box;">
-<p style="margin: 0 0 4px; font-size: 18px; font-weight: 800; color: #1F1B16;">רוצים לקבוע את שיחת ההיכרות כבר עכשיו?</p>
-<p style="margin: 0 0 12px; font-size: 13.5px; color: #5E564B;">30 דקות ב-Google Meet, בלי עלות ובלי התחייבות</p>
-<iframe title="קביעת שיחת היכרות" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0V8Sze4iYa95lojRXdFtns95GUW7RkqkoAwtwnGAcPOirkIGcBlnrf32bPqh7efg80Bd_Ix0Od?gv=true" style="border: 0; border-radius: 14px; background: #FFFFFF;" width="100%" height="600" frameborder="0" loading="lazy"></iframe>
-</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #4A4238; max-width: 360px;">אחזור אליכם בהקדם.</p>
+<p id="booked-note" style="display: none; margin: 0; padding: 14px 16px; border-radius: 16px; background: #E3F4EA; color: #17613A; font-size: 16px; font-weight: 700; line-height: 1.6;"></p>
 <button type="button" data-click="reset" class="lp-btn" style="margin-top: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1.5px solid #E6DCCB; background: #FFFFFF; font: inherit; font-weight: 700; font-size: 15.5px; color: #1F1B16; cursor: pointer;">שליחת פנייה נוספת</button>
 </div>
 </div>
@@ -609,10 +605,12 @@ setInterval(tick,40);
 <textarea id="lp-msg" name="message" class="lp-input" rows="3" placeholder="לא חובה" style="resize: vertical; min-height: 96px;"></textarea>
 </div>
 <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"><label>אל תמלאו שדה זה<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-<div style="margin: 4px 0 0;">
-<p style="margin: 0 0 4px; font-size: 18px; font-weight: 800; color: #1F1B16;">מעדיפים לקבוע שיחה ישר ליומן?</p>
-<p style="margin: 0 0 12px; font-size: 13.5px; color: #5E564B;">שיחת היכרות של 30 דקות בווידאו, בלי עלות ובלי התחייבות. בוחרים מועד פנוי והקישור מגיע למייל.</p>
-<iframe title="קביעת שיחת היכרות ביומן" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0V8Sze4iYa95lojRXdFtns95GUW7RkqkoAwtwnGAcPOirkIGcBlnrf32bPqh7efg80Bd_Ix0Od?gv=true" style="border: 0; border-radius: 14px; background: #FFFFFF;" width="100%" height="760" frameborder="0" loading="lazy"></iframe>
+<div id="slot-box" hidden style="margin: 4px 0 0; padding: 18px 16px; border-radius: 18px; background: #FFF6E4;">
+<p style="margin: 0 0 4px; font-size: 17px; font-weight: 800; color: #1F1B16;">רוצים לקבוע שיחת היכרות?</p>
+<p style="margin: 0 0 12px; font-size: 13.5px; color: #5E564B;">30 דקות בווידאו (Google Meet), בלי עלות ובלי התחייבות. בוחרים יום ושעה והזמנה מגיעה למייל. לא חובה.</p>
+<div id="slot-days" role="group" aria-label="בחירת יום" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+<div id="slot-times" role="group" aria-label="בחירת שעה" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;"></div>
+<p id="slot-chosen" aria-live="polite" style="margin: 12px 0 0; font-size: 14.5px; font-weight: 700; color: #1E7A48;"></p>
 </div>
 <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; line-height: 1.6; color: #4A4238; cursor: pointer;">
 <input type="checkbox" name="consent" required="required" style="flex: none; width: 20px; height: 20px; margin: 2px 0 0; accent-color: #9A6E22;">
@@ -767,6 +765,42 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
     if (max > 0 && window.scrollY / max > 0.25) { set({ wheelOpen: true, shown: true }); focusClose(); }
   }, { passive: true });
 
+
+  /* ===== בורר מועדים מסונכרן ליומן ===== */
+  const SLOTS_URL = 'https://script.google.com/macros/s/AKfycbz0F1HyBpD_zFt2z0autALre-zJg2JQrCKLrBXmxuTT5yrrPg3zZ14wycJlHk1FCI1u/exec';
+  const slotState = { slots: [], day: '', iso: '' };
+  const fmtDay = new Intl.DateTimeFormat('he-IL', { weekday: 'long', day: 'numeric', month: 'numeric', timeZone: 'Asia/Jerusalem' });
+  const fmtTime = new Intl.DateTimeFormat('he-IL', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Jerusalem' });
+  const dayKey = iso => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Jerusalem' }).format(new Date(iso));
+  function chip(text, pressed, onClick) {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = text; b.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    b.style.cssText = 'min-height:44px;padding:8px 16px;border-radius:999px;border:1.5px solid ' + (pressed ? '#C9963A' : '#E6DCCB') + ';background:' + (pressed ? '#FFF1D2' : '#FFFFFF') + ';font:inherit;font-size:15px;font-weight:' + (pressed ? '700' : '500') + ';color:#1F1B16;cursor:pointer;';
+    b.addEventListener('click', onClick); return b;
+  }
+  function renderSlots() {
+    const days = document.getElementById('slot-days'), times = document.getElementById('slot-times'), chosen = document.getElementById('slot-chosen');
+    days.innerHTML = ''; times.innerHTML = '';
+    const keys = []; slotState.slots.forEach(i => { const k = dayKey(i); if (keys.indexOf(k) < 0) keys.push(k); });
+    keys.forEach(k => {
+      const first = slotState.slots.find(i => dayKey(i) === k);
+      days.appendChild(chip(fmtDay.format(new Date(first)), slotState.day === k, () => { slotState.day = k; slotState.iso = ''; renderSlots(); }));
+    });
+    if (slotState.day) slotState.slots.filter(i => dayKey(i) === slotState.day).forEach(i => {
+      times.appendChild(chip(fmtTime.format(new Date(i)), slotState.iso === i, () => { slotState.iso = (slotState.iso === i ? '' : i); renderSlots(); }));
+    });
+    chosen.textContent = slotState.iso ? 'נבחר: ' + fmtDay.format(new Date(slotState.iso)) + ' בשעה ' + fmtTime.format(new Date(slotState.iso)) + '. אפשר ללחוץ שוב על השעה כדי לבטל.' : '';
+  }
+  async function loadSlots() {
+    try {
+      const r = await fetch(SLOTS_URL + '?action=slots', { redirect: 'follow' });
+      const j = await r.json();
+      if (!j.ok || !j.slots || !j.slots.length) return;
+      slotState.slots = j.slots; slotState.day = ''; slotState.iso = '';
+      document.getElementById('slot-box').hidden = false; renderSlots();
+    } catch (e) { /* אין יומן זמין: הטופס ממשיך לעבוד בלי בחירת מועד */ }
+  }
+  loadSlots();
+
   document.addEventListener('submit', async e => {
     const form = e.target.closest('[data-submit]'); if (!form) return;
     e.preventDefault();
@@ -786,8 +820,26 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
     try {
       /* שליחה ללא תלות בכותרות CORS: אם הבקשה יצאה, הטופס נחשב כנשלח. כשל ברשת (למשל אין חיבור) יוצג כשגיאה */
       if (!navigator.onLine) throw new Error('offline');
-      await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify({ name: g('name'), email: g('email'), phone: g('phone'), business: g('business'), package: g('package'), message: g('message'), bonus: g('bonus'), website: g('website') }) });
-      form.reset(); set({ sent: true });
+      let bookedText = '';
+      if (slotState.iso) {
+        const when = fmtDay.format(new Date(slotState.iso)) + ' בשעה ' + fmtTime.format(new Date(slotState.iso));
+        let res;
+        try {
+          const r = await fetch(SLOTS_URL, { method: 'POST', redirect: 'follow', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify({ action: 'book', start: slotState.iso, name: g('name'), email: g('email'), phone: g('phone'), website: g('website') }) });
+          res = await r.json();
+        } catch (x) { res = { ok: false, error: 'net' }; }
+        if (!res.ok) {
+          err.textContent = res.error === 'taken' ? 'המועד שבחרתם כבר נתפס. אפשר לבחור מועד אחר ולשלוח שוב.' : 'לא הצלחנו לקבוע את המועד. אפשר לנסות שוב, או לשלוח בלי בחירת מועד ואחזור אליכם לתיאום.';
+          err.style.display = 'block';
+          if (res.error === 'taken') await loadSlots();
+          return;
+        }
+        bookedText = 'השיחה נקבעה ל' + when + '. הזמנה עם קישור לשיחה נשלחה למייל.';
+        params.message = params.message + ' | שיחה נקבעה: ' + when;
+      }
+      await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify({ name: g('name'), email: g('email'), phone: g('phone'), business: g('business'), package: g('package'), message: (params.message === '—' ? '' : params.message), bonus: g('bonus'), website: g('website') }) });
+      form.reset(); slotState.iso = ''; set({ sent: true });
+      const bn = document.getElementById('booked-note'); if (bn) { bn.textContent = bookedText; bn.style.display = bookedText ? 'block' : 'none'; }
       document.getElementById('lead').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (x) {
       err.textContent = 'השליחה לא הצליחה. אפשר לנסות שוב או לכתוב לי בוואטסאפ: 053-315-3356';
