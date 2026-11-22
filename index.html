@@ -890,7 +890,7 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
         bookedText = 'השיחה נקבעה ל' + when + '. הזמנה עם קישור לשיחה נשלחה למייל.';
         params.message = params.message + ' | שיחה נקבעה: ' + when;
       }
-      await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify({ name: g('name'), email: g('email'), phone: g('phone'), business: g('business'), package: g('package'), message: (params.message === '—' ? '' : params.message), bonus: g('bonus'), website: g('website') }) });
+      await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify({ name: g('name'), email: g('email'), phone: g('phone'), business: g('business'), package: g('package'), message: (params.message === '—' ? '' : params.message), bonus: g('bonus'), website: g('website'), booked: !!bookedText }) });
       form.reset(); slotState.iso = ''; set({ sent: true });
       const bn = document.getElementById('booked-note'); if (bn) { bn.textContent = bookedText; bn.style.display = bookedText ? 'block' : 'none'; }
       document.getElementById('lead').scrollIntoView({ behavior: 'smooth', block: 'start' });
