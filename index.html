@@ -767,7 +767,21 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
 
 
   /* ===== בורר מועדים מסונכרן ליומן ===== */
-  const SLOTS_URL = 'https://script.google.com/macros/s/AKfycbxsM-KjIYAKs2WEeC045kyXOut-4wFOi2e4BsrygywPOGeTB6puuiHN8EckK-m887XD/exec';
+  /* קריאה לשרת ללא CORS: טעינת תג script עם callback */
+  function jsonp(path, params) {
+    return new Promise((resolve, reject) => {
+      const cb = 'lpcb' + Date.now() + Math.floor(Math.random() * 1e6);
+      const q = new URLSearchParams(Object.assign({ callback: cb }, params || {}));
+      const sc = document.createElement('script');
+      let done = false;
+      const end = () => { done = true; delete window[cb]; sc.remove(); clearTimeout(t); };
+      const t = setTimeout(() => { if (!done) { end(); reject(new Error('timeout')); } }, 20000);
+      window[cb] = data => { end(); resolve(data); };
+      sc.onerror = () => { if (!done) { end(); reject(new Error('load')); } };
+      sc.src = FORM_ENDPOINT + path + '?' + q.toString();
+      document.head.appendChild(sc);
+    });
+  }
   const slotState = { slots: [], day: '', iso: '' };
   const fmtDay = new Intl.DateTimeFormat('he-IL', { weekday: 'long', day: 'numeric', month: 'numeric', timeZone: 'Asia/Jerusalem' });
   const fmtTime = new Intl.DateTimeFormat('he-IL', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Jerusalem' });
@@ -795,8 +809,7 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
     box.hidden = false; chosen.style.color = '#5E564B'; chosen.textContent = 'טוען מועדים פנויים…';
     let code = '';
     try {
-      const r = await fetch(SLOTS_URL + '?action=slots', { redirect: 'follow' });
-      const j = await r.json();
+      const j = await jsonp('/slots');
       if (j.ok && j.slots && j.slots.length) {
         slotState.slots = j.slots; slotState.day = ''; slotState.iso = ''; chosen.style.color = '#1E7A48'; renderSlots(); return;
       }
@@ -831,8 +844,7 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
         const when = fmtDay.format(new Date(slotState.iso)) + ' בשעה ' + fmtTime.format(new Date(slotState.iso));
         let res;
         try {
-          const r = await fetch(SLOTS_URL, { method: 'POST', redirect: 'follow', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify({ action: 'book', start: slotState.iso, name: g('name'), email: g('email'), phone: g('phone'), website: g('website') }) });
-          res = await r.json();
+          res = await jsonp('/book', { start: slotState.iso, name: g('name'), email: g('email'), phone: g('phone'), website: g('website') });
         } catch (x) { res = { ok: false, error: 'net' }; }
         if (!res.ok) {
           err.textContent = res.error === 'taken' ? 'המועד שבחרתם כבר נתפס. אפשר לבחור מועד אחר ולשלוח שוב.' : 'לא הצלחנו לקבוע את המועד. אפשר לנסות שוב, או לשלוח בלי בחירת מועד ואחזור אליכם לתיאום.';
