@@ -605,7 +605,7 @@ setInterval(tick,40);
 <textarea id="lp-msg" name="message" class="lp-input" rows="3" placeholder="לא חובה" style="resize: vertical; min-height: 96px;"></textarea>
 </div>
 <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"><label>אל תמלאו שדה זה<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-<div id="slot-box" hidden style="margin: 4px 0 0; padding: 18px 16px; border-radius: 18px; background: #FFF6E4;">
+<div id="slot-box" style="margin: 4px 0 0; padding: 18px 16px; border-radius: 18px; background: #FFF6E4;">
 <p style="margin: 0 0 4px; font-size: 17px; font-weight: 800; color: #1F1B16;">רוצים לקבוע שיחת היכרות?</p>
 <p style="margin: 0 0 12px; font-size: 13.5px; color: #5E564B;">30 דקות בווידאו (Google Meet), בלי עלות ובלי התחייבות. בוחרים יום ושעה והזמנה מגיעה למייל. לא חובה.</p>
 <div id="slot-days" role="group" aria-label="בחירת יום" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
@@ -791,13 +791,19 @@ const FORM_ENDPOINT = 'https://tadmit-form.tehilauto.com';
     chosen.textContent = slotState.iso ? 'נבחר: ' + fmtDay.format(new Date(slotState.iso)) + ' בשעה ' + fmtTime.format(new Date(slotState.iso)) + '. אפשר ללחוץ שוב על השעה כדי לבטל.' : '';
   }
   async function loadSlots() {
+    const box = document.getElementById('slot-box'), chosen = document.getElementById('slot-chosen');
+    box.hidden = false; chosen.style.color = '#5E564B'; chosen.textContent = 'טוען מועדים פנויים…';
+    let code = '';
     try {
       const r = await fetch(SLOTS_URL + '?action=slots', { redirect: 'follow' });
       const j = await r.json();
-      if (!j.ok || !j.slots || !j.slots.length) return;
-      slotState.slots = j.slots; slotState.day = ''; slotState.iso = '';
-      document.getElementById('slot-box').hidden = false; renderSlots();
-    } catch (e) { /* אין יומן זמין: הטופס ממשיך לעבוד בלי בחירת מועד */ }
+      if (j.ok && j.slots && j.slots.length) {
+        slotState.slots = j.slots; slotState.day = ''; slotState.iso = ''; chosen.style.color = '#1E7A48'; renderSlots(); return;
+      }
+      code = j.ok ? (j.slots ? 'no-free-slots' : 'old-script') : ('err:' + (j.error || '?'));
+    } catch (e) { code = 'fetch-failed'; }
+    chosen.style.color = '#5E564B';
+    chosen.textContent = code === 'no-free-slots' ? 'אין כרגע מועדים פנויים בימים הקרובים. אחזור אליכם לתיאום.' : 'המועדים לא נטענו כרגע. אפשר לשלוח את הפנייה ואחזור אליכם לתיאום. (קוד: ' + code + ')';
   }
   loadSlots();
 
