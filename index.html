@@ -243,6 +243,13 @@ body.a11y-high .lp-input,body.a11y-high input,body.a11y-high textarea,body.a11y-
 .lp-foot{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:24px}
 .lp-foot-links{display:flex;flex-direction:column;align-items:center;gap:16px;justify-self:end;padding-top:8px}
 @media (max-width:720px){.lp-foot{grid-template-columns:1fr}.lp-foot-side:first-child{display:none}.lp-foot-links{justify-self:center;flex-direction:row;flex-wrap:wrap;justify-content:center;order:2}}
+#ck-bar{position:fixed;left:24px;bottom:24px;z-index:8000;max-width:560px;display:none;align-items:center;gap:16px;padding:16px 18px;background:#FFFFFF;border:1px solid #F0E6D4;border-radius:18px;box-shadow:0 18px 40px -16px rgba(60,40,10,.35);font-family:'Heebo',sans-serif;direction:rtl;color:#1F1B16}
+#ck-bar.show{display:flex}
+#ck-bar p{margin:0;font-size:14.5px;line-height:1.6}
+#ck-bar a{color:#7A5718;font-weight:700}
+#ck-ok{flex:none;min-height:44px;padding:0 22px;border:0;border-radius:999px;background:#1F1B16;color:#FFFBF3;font:inherit;font-size:15px;font-weight:800;cursor:pointer}
+#ck-ok:focus-visible,#ck-bar a:focus-visible{outline:3px solid #C9963A;outline-offset:2px}
+@media (max-width:720px){#ck-bar{left:12px;right:96px;bottom:12px;max-width:none;flex-direction:column;align-items:stretch;gap:10px;padding:14px}}
 </style>
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -942,5 +949,12 @@ panel.addEventListener('click',function(e){var b=e.target.closest('[data-a11y]')
 document.getElementById('a11y-reset').addEventListener('click',function(){st={};save();apply();});
 load();apply();
 })();</script>
+<div id="ck-bar" role="region" aria-label="הודעה על עוגיות ושמירת העדפות">
+<p>האתר שומר בדפדפן רק העדפות, כמו הגדרות נגישות. אין כאן עוגיות פרסום או מעקב. <a href="privacy.html">למדיניות הפרטיות</a></p>
+<button id="ck-ok" type="button">הבנתי</button>
+</div>
+<script>(function(){var K='tadmit_cookie_ok',b=document.getElementById('ck-bar');var ok=false;try{ok=localStorage.getItem(K)==='1';}catch(e){}
+if(!ok)b.classList.add('show');
+document.getElementById('ck-ok').addEventListener('click',function(){try{localStorage.setItem(K,'1');}catch(e){}b.classList.remove('show');});})();</script>
 </body>
 </html>
