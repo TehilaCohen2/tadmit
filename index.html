@@ -252,6 +252,8 @@ body.a11y-high .lp-input,body.a11y-high input,body.a11y-high textarea,body.a11y-
 body.ck-open{padding-bottom:var(--ckh,0px)}
 body.ck-open .lp-gfab,body.ck-open .lp-wa,body.ck-open #a11y-btn{translate:0 calc(-1 * var(--ckh,0px))}
 @media (max-width:720px){#ck-bar{flex-direction:column;align-items:stretch;gap:10px;padding:14px 16px;text-align:center}}
+/* יוקרה: אייקונים בקו זהב אחיד */
+.lp-why .lp-ico,.lp-feat .lp-ico{background:transparent !important;border:1px solid #E6D3AE;border-radius:12px !important;color:#9A6E22 !important}
 </style>
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -385,28 +387,28 @@ var pb=document.getElementById('demo-pause');pb.addEventListener('click',functio
 <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #4A4238;">כשלקוח מגיע ממודעה, מפוסט או מהמלצה, יש רק כמה שניות לתפוס את הקשב שלו.<br>עמוד תדמית עושה דבר אחד, ועושה אותו מושלם.</p>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 24px;">
-<article class="lp-card lp-reveal" style="flex: 1 1 240px; min-width: 0; padding: 34px; border-radius: 26px; background: #FFF6E4; display: flex; flex-direction: column; gap: 14px;">
+<article class="lp-card lp-reveal lp-why" style="flex: 1 1 240px; min-width: 0; padding: 34px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4; border-top: 2px solid #C9963A; display: flex; flex-direction: column; gap: 14px;">
 <span class="lp-ico" style="width: 56px; height: 56px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #9A6E22;">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg>
 </span>
 <h3 style="margin: 0; font-size: 22px; font-weight: 800;">מסר אחד חד וברור</h3>
 <p style="margin: 0; font-size: 16.5px; line-height: 1.7; color: #4A4238;">בלי תפריטים או עמודים מיותרים שמפזרים את הקשב. הלקוח נכנס, מבין בדיוק את הערך שלכם, ומשאיר פרטים.</p>
 </article>
-<article class="lp-card lp-reveal lp-r2" style="flex: 1 1 240px; min-width: 0; padding: 34px; border-radius: 26px; background: #FDEDE5; display: flex; flex-direction: column; gap: 14px;">
+<article class="lp-card lp-reveal lp-r2 lp-why" style="flex: 1 1 240px; min-width: 0; padding: 34px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4; border-top: 2px solid #C9963A; display: flex; flex-direction: column; gap: 14px;">
 <span class="lp-ico" style="width: 56px; height: 56px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #B4532E;">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13h4.5l1.5 3h4l1.5-3H20"></path><path d="M6.5 5h11L20 13v6H4v-6z"></path></svg>
 </span>
 <h3 style="margin: 0; font-size: 22px; font-weight: 800;">הפניות במקום מסודר</h3>
 <p style="margin: 0; font-size: 16.5px; line-height: 1.7; color: #4A4238;">די לאבד לקוחות בין הודעות וואטסאפ, שיחות שלא נענו ותגובות ברשתות. הכל מרוכז במקום אחד.</p>
 </article>
-<article class="lp-card lp-reveal lp-r3" style="flex: 1 1 240px; min-width: 0; padding: 34px; border-radius: 26px; background: #E9F5EE; display: flex; flex-direction: column; gap: 14px;">
+<article class="lp-card lp-reveal lp-r3 lp-why" style="flex: 1 1 240px; min-width: 0; padding: 34px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4; border-top: 2px solid #C9963A; display: flex; flex-direction: column; gap: 14px;">
 <span class="lp-ico" style="width: 56px; height: 56px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #1E7A48;">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"></path></svg>
 </span>
 <h3 style="margin: 0; font-size: 22px; font-weight: 800;">רושם מקצועי מהשנייה הראשונה</h3>
 <p style="margin: 0; font-size: 16.5px; line-height: 1.7; color: #4A4238;">עיצוב מדויק בצבעי המותג, שנראה מעולה ומזמין גם בטלפון הנייד וגם במחשב.</p>
 </article>
-<article class="lp-card lp-reveal lp-r4" style="flex: 1 1 240px; min-width: 0; padding: 34px; border-radius: 26px; background: #EEF0FB; display: flex; flex-direction: column; gap: 14px;">
+<article class="lp-card lp-reveal lp-r4 lp-why" style="flex: 1 1 240px; min-width: 0; padding: 34px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4; border-top: 2px solid #C9963A; display: flex; flex-direction: column; gap: 14px;">
 <span class="lp-ico" style="width: 56px; height: 56px; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #4B53B8;">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path><path d="M9 11h6M9 14h4"></path></svg>
 </span>
@@ -425,27 +427,27 @@ var pb=document.getElementById('demo-pause');pb.addEventListener('click',functio
 <h2 style="margin: 0; font-family: 'Secular One', 'Heebo', sans-serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.15;">כל מה שעמוד מצוין צריך, במקום אחד</h2>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-<div class="lp-reveal lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 22px; background: #FFFFFF; border: 1px solid #F0E6D4;">
+<div class="lp-reveal lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <span class="lp-ico" style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #9A6E22;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-1-.8-1.4-.8-2.3 0-.8.7-1.3 1.6-1.3H17a4 4 0 0 0 4-4C21 7 17 3 12 3z"></path><circle cx="7.5" cy="11" r="1"></circle><circle cx="10.5" cy="7.5" r="1"></circle><circle cx="15" cy="7.5" r="1"></circle></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">עיצוב אישי לפי המיתוג</h3><p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">צבעים, פונטים ואווירה שמדייקים את הלוגו והסגנון שלכם.</p></div>
 </div>
-<div class="lp-reveal lp-r2 lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 22px; background: #FFFFFF; border: 1px solid #F0E6D4;">
+<div class="lp-reveal lp-r2 lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <span class="lp-ico" style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #9A6E22;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M9 9v11"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">מבנה שבנוי להמרה</h3><p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">סדר חכם של כותרת, ערך מוסף וכפתור פעולה שמניע את הלקוח קדימה.</p></div>
 </div>
-<div class="lp-reveal lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 22px; background: #FFFFFF; border: 1px solid #F0E6D4;">
+<div class="lp-reveal lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <span class="lp-ico" style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #9A6E22;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">התאמה למחשב ולנייד</h3></div>
 </div>
-<div class="lp-reveal lp-r2 lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 22px; background: #FFFFFF; border: 1px solid #F0E6D4;">
+<div class="lp-reveal lp-r2 lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <span class="lp-ico" style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #9A6E22;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h4"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">טופס פניות</h3><p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">כזה שמאפשר להשאיר פרטים בכמה שניות ובלי שום מאמץ.</p></div>
 </div>
-<div class="lp-reveal lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 22px; background: #FFFFFF; border: 1px solid #F0E6D4;">
+<div class="lp-reveal lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <span class="lp-ico" style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #9A6E22;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.9-3M4 4v4h4M4 13a8 8 0 0 0 14.9 3M20 20v-4h-4"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">סבב תיקונים מוקפד</h3><p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">עוברים יחד על העמוד ודואגים שירגיש בדיוק כמו שדמיינתם.</p></div>
 </div>
-<div class="lp-reveal lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 22px; background: #FFFFFF; border: 1px solid #F0E6D4;">
+<div class="lp-reveal lp-feat" style="flex: 1 1 340px; min-width: 0; display: flex; gap: 18px; align-items: flex-start; padding: 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <span class="lp-ico" style="flex: none; width: 48px; height: 48px; border-radius: 14px; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #9A6E22;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 6px;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">תשובה אוטומטית ללקוח</h3><p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">כל מי שמשאיר פנייה מקבל מיד מייל אישור מעוצב, ויודע שהפנייה הגיעה.</p></div>
 </div>
@@ -462,22 +464,22 @@ var pb=document.getElementById('demo-pause');pb.addEventListener('click',functio
 </div>
 <div aria-hidden="true" style="height: 4px; border-radius: 2px; background: #F0E6D4; position: relative; overflow: hidden; margin-bottom: -24px;"><div class="lp-track" style="position: absolute; inset: 0; background: #C9963A; transform-origin: right center;"></div></div>
 <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 20px;">
-<li class="lp-reveal" style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 26px; border-radius: 24px; background: #FFFBF3; border: 1px solid #F0E6D4;">
+<li class="lp-reveal" style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4; border-top: 2px solid #C9963A;">
 <span style="font-family: 'Secular One', sans-serif; font-size: 44px; line-height: 1; color: #C9963A;" dir="ltr">01</span>
 <h3 style="margin: 0; font-size: 20px; font-weight: 800;">שיחת היכרות קצרה</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">מבינים לעומק מה העסק מציע, מי הקהל שלכם, ומה המטרה המדויקת של העמוד.</p>
 </li>
-<li class="lp-reveal lp-r2" style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 26px; border-radius: 24px; background: #FFFBF3; border: 1px solid #F0E6D4;">
+<li class="lp-reveal lp-r2" style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4; border-top: 2px solid #C9963A;">
 <span style="font-family: 'Secular One', sans-serif; font-size: 44px; line-height: 1; color: #C9963A;" dir="ltr">02</span>
 <h3 style="margin: 0; font-size: 20px; font-weight: 800;">תוכן ומבנה</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">אתם מעבירים את החומרים, או שאני כותבת הכל מאפס עבורכם (בהתאם לחבילה הנבחרת).</p>
 </li>
-<li class="lp-reveal lp-r3" style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 26px; border-radius: 24px; background: #FFFBF3; border: 1px solid #F0E6D4;">
+<li class="lp-reveal lp-r3" style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4; border-top: 2px solid #C9963A;">
 <span style="font-family: 'Secular One', sans-serif; font-size: 44px; line-height: 1; color: #C9963A;" dir="ltr">03</span>
 <h3 style="margin: 0; font-size: 20px; font-weight: 800;">עיצוב ובנייה</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">אני מעצבת ובונה את העמוד בצבעי המותג, עם דגש מלא על חוויית משתמש ונוחות בנייד.</p>
 </li>
-<li class="lp-reveal lp-r4" style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 26px; border-radius: 24px; background: #FFF1D2; border: 1px solid #F0DDB8;">
+<li class="lp-reveal lp-r4" style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 26px; border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4; border-top: 2px solid #C9963A;">
 <span style="font-family: 'Secular One', sans-serif; font-size: 44px; line-height: 1; color: #9A6E22;" dir="ltr">04</span>
 <h3 style="margin: 0; font-size: 20px; font-weight: 800;">תיקונים ועולים לאוויר</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A4238;">עושים סבב דיוקים משותף, והעמוד מוכן להתחיל לעבוד ולהביא פניות.</p>
@@ -496,7 +498,7 @@ var pb=document.getElementById('demo-pause');pb.addEventListener('click',functio
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; align-items: stretch;">
 
-<article class="lp-card lp-reveal" style="flex: 1 1 340px; max-width: 520px; min-width: 0; padding: 40px 36px; border-radius: 30px; background: #FFFFFF; border: 1px solid #F0E6D4; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box;">
+<article class="lp-card lp-reveal" style="flex: 1 1 340px; max-width: 520px; min-width: 0; padding: 40px 36px; border-radius: 16px; background: #FFFFFF; border: 1px solid #F0E6D4; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box;">
 <div style="display: flex; flex-direction: column; gap: 8px;">
 <h3 style="margin: 0; font-size: 24px; font-weight: 800;">עמוד תדמית</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4238;">אתם מביאים את התוכן</p>
@@ -514,8 +516,8 @@ var pb=document.getElementById('demo-pause');pb.addEventListener('click',functio
 <a href="#lead" class="lp-btn" style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #1F1B16; color: #1F1B16; text-decoration: none; font-weight: 800; font-size: 16.5px; box-sizing: border-box;">אני רוצה את החבילה הזו</a>
 </article>
 
-<article class="lp-card lp-reveal lp-r2" style="flex: 1 1 340px; max-width: 520px; min-width: 0; padding: 40px 36px; border-radius: 30px; background: #FFF6E4; border: 2px solid #C9963A; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box; position: relative;">
-<div aria-hidden="true" class="lp-glow" style="position: absolute; inset: -2px; border-radius: 30px; pointer-events: none;"></div>
+<article class="lp-card lp-reveal lp-r2" style="flex: 1 1 340px; max-width: 520px; min-width: 0; padding: 40px 36px; border-radius: 16px; background: #FFF6E4; border: 2px solid #C9963A; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box; position: relative;">
+<div aria-hidden="true" class="lp-glow" style="position: absolute; inset: -2px; border-radius: 16px; pointer-events: none;"></div>
 <span style="position: absolute; top: -16px; right: 32px; padding: 7px 16px; border-radius: 999px; background: #C9963A; color: #1F1B16; font-size: 14px; font-weight: 800;">הכול עליי</span>
 <div style="display: flex; flex-direction: column; gap: 8px;">
 <h3 style="margin: 0; font-size: 24px; font-weight: 800;">עמוד תדמית + קופירייטינג</h3>
@@ -555,19 +557,19 @@ var pb=document.getElementById('demo-pause');pb.addEventListener('click',functio
 <h2 style="margin: 0; font-family: 'Secular One', 'Heebo', sans-serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.15;">רגע לפני שמתחילים</h2>
 </div>
 <div style="display: flex; flex-direction: column; gap: 14px;">
-<details class="lp-reveal" style="border-radius: 20px; background: #FFFBF3; border: 1px solid #F0E6D4;">
+<details class="lp-reveal" style="border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 26px; font-size: 18px; font-weight: 700; min-height: 44px;">מה ההבדל בין שתי החבילות?<span class="lp-plus" aria-hidden="true" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #7A5718;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
 <p style="margin: 0; padding: 0 26px 24px; font-size: 16.5px; line-height: 1.75; color: #4A4238;">בחבילה הראשונה אתם מספקים את הטקסטים ואני מעצבת ובונה. בחבילה השנייה אני חוסכת לכם את הכתיבה: מספרים לי על העסק בשיחה, ואני מנסחת הכל מאפס.</p>
 </details>
-<details class="lp-reveal" style="border-radius: 20px; background: #FFFBF3; border: 1px solid #F0E6D4;">
+<details class="lp-reveal" style="border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 26px; font-size: 18px; font-weight: 700; min-height: 44px;">אין לי שום רקע טכני, זה מתאים לי?<span class="lp-plus" aria-hidden="true" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #7A5718;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
 <p style="margin: 0; padding: 0 26px 24px; font-size: 16.5px; line-height: 1.75; color: #4A4238;">בדיוק בשביל זה אני כאן. אתם מספרים על העסק שלכם, ואני דואגת מא' ועד ת' לכל הצד הטכני והעיצובי.</p>
 </details>
-<details class="lp-reveal" style="border-radius: 20px; background: #FFFBF3; border: 1px solid #F0E6D4;">
+<details class="lp-reveal" style="border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 26px; font-size: 18px; font-weight: 700; min-height: 44px;">ומה אם ארצה שינויים אחרי שנראה את העמוד?<span class="lp-plus" aria-hidden="true" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #7A5718;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
 <p style="margin: 0; padding: 0 26px 24px; font-size: 16.5px; line-height: 1.75; color: #4A4238;">סבב תיקונים אחד כבר כלול במחיר. אם תרצו שינויים נוספים בהמשך, העלות היא 500 ₪ לסבב.</p>
 </details>
-<details class="lp-reveal" style="border-radius: 20px; background: #FFFBF3; border: 1px solid #F0E6D4;">
+<details class="lp-reveal" style="border-radius: 14px; background: #FFFFFF; border: 1px solid #EADCC4;">
 <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 26px; font-size: 18px; font-weight: 700; min-height: 44px;">איך מתבצע התשלום?<span class="lp-plus" aria-hidden="true" style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #FFF1D2; display: flex; align-items: center; justify-content: center; color: #7A5718;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
 <p style="margin: 0; padding: 0 26px 24px; font-size: 16.5px; line-height: 1.75; color: #4A4238;">50% מקדמה בתחילת הדרך, ו-50% יתרת תשלום במסירת העמוד.</p>
 </details>
@@ -591,7 +593,7 @@ var pb=document.getElementById('demo-pause');pb.addEventListener('click',functio
 </ul>
 </div>
 
-<div class="lp-reveal lp-r2" style="flex: 1 1 460px; min-width: 0; padding: clamp(26px, 4vw, 44px); border-radius: 30px; background: #FFFFFF; box-shadow: 0 40px 80px -40px rgba(90,64,20,.35), 0 0 0 1px #F0E6D4; box-sizing: border-box;">
+<div class="lp-reveal lp-r2" style="flex: 1 1 460px; min-width: 0; padding: clamp(26px, 4vw, 44px); border-radius: 18px; background: #FFFFFF; box-shadow: 0 40px 80px -40px rgba(90,64,20,.35), 0 0 0 1px #F0E6D4; box-sizing: border-box;">
 <div data-if="sent" style="display: contents;">
 <div role="status" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; padding: 48px 12px;">
 <span style="width: 76px; height: 76px; border-radius: 50%; background: #E3F4EA; display: flex; align-items: center; justify-content: center;"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1E7A48" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"></path></svg></span>
