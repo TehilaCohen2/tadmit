@@ -1,0 +1,713 @@
+<title>HAREL מנפחים אירועים</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="HAREL מנפחים אירועים – עיצובי בלונים יוקרתיים לאירועים בהתאמה אישית: קירות בלונים, עיצוב שולחנות, מתנות ובר קינוחים. להזמנות: רות 052-7139676">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700&display=swap">
+<script>document.documentElement.setAttribute('dir','rtl');document.documentElement.setAttribute('lang','he');</script>
+<style>
+html{direction:rtl}
+/* Layout: forest-green bands framed by gold hairlines (like the logo) alternating with ivory "paper" bands; arch shapes echo the arched backdrops in her work. */
+:root{
+  color-scheme: light;
+  --forest:#062514;      /* logo background */
+  --forest-2:#0b3520;
+  --forest-deep:#03160b;
+  --gold:#c9a24f;
+  --gold-hi:#efd59a;
+  --gold-lo:#94701f;
+  --ivory:#faf6ee;
+  --cream:#efe7d9;        /* ad paper */
+  --ink:#10241a;
+  --muted:#5b6a60;
+  --on-dark:#f6f0e2;
+  --on-dark-muted:#b9c2b6;
+  --line-dark:rgba(201,162,79,.38);
+  --line-light:rgba(148,112,31,.28);
+  --gold-grad:linear-gradient(100deg,#8d681c 0%,#d9b467 28%,#f4dfa6 46%,#c9a24f 62%,#8a6520 100%);
+  --font:"Heebo","Assistant","Segoe UI",Arial,sans-serif;
+  --gutter:max(clamp(16px,4vw,40px), env(safe-area-inset-left,0px));
+  --gutter-r:max(clamp(16px,4vw,40px), env(safe-area-inset-right,0px));
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--forest)}
+body{margin:0;font-family:var(--font);background:var(--ivory);color:var(--ink);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:300;line-height:1.15}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1200px;margin-inline:auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;background:var(--gold);color:var(--forest);padding:10px 16px;border-radius:6px;z-index:100;text-decoration:none;font-weight:600}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.8rem;letter-spacing:.16em;font-weight:500;color:var(--gold-lo)}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.dark .eyebrow{color:var(--gold)}
+.gold-text{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;}
+.heart{display:inline-block;width:12px;height:11px;background:var(--gold-grad);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21.5 1.7 11.4A6.2 6.2 0 0 1 12 3.3a6.2 6.2 0 0 1 10.3 8.1z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21.5 1.7 11.4A6.2 6.2 0 0 1 12 3.3a6.2 6.2 0 0 1 10.3 8.1z'/%3E%3C/svg%3E") center/contain no-repeat}
+.rule{display:flex;align-items:center;gap:14px;color:var(--gold)}
+.rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold) 70%)}
+.rule::after{background:linear-gradient(270deg,transparent,var(--gold) 70%)}
+
+/* ---------- buttons ---------- */
+.btn{--h:54px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:var(--h);padding:0 30px;border-radius:999px;font:500 1rem/1 var(--font);text-decoration:none;cursor:pointer;border:0;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background-position .6s var(--ease),color .3s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-gold{background:var(--gold-grad);background-size:200% 100%;background-position:100% 0;color:var(--forest-deep);box-shadow:0 10px 30px -12px rgba(201,162,79,.7),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-gold:hover{background-position:0 0;transform:translateY(-2px);box-shadow:0 18px 40px -14px rgba(201,162,79,.85),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn-ghost{background:transparent;color:var(--on-dark);box-shadow:inset 0 0 0 1px var(--line-dark)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1px var(--gold);color:var(--gold-hi);transform:translateY(-2px)}
+
+/* ---------- header ---------- */
+.site-head{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s,box-shadow .4s,backdrop-filter .4s}
+.site-head.scrolled{background:rgba(3,22,11,.82);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 var(--line-dark)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:78px;transition:height .4s}
+.scrolled .head-in{height:64px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:40px;width:auto;transition:height .4s}
+.scrolled .brand img{height:34px}
+.nav{display:flex;gap:34px;align-items:center}
+.nav a{color:var(--on-dark);text-decoration:none;font-size:.95rem;font-weight:400;position:relative;padding-block:6px}
+.nav a::after{content:"";position:absolute;inset-inline:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .4s var(--ease)}
+.nav a:hover::after{transform:scaleX(1)}
+.head-cta{--h:44px;padding:0 22px;font-size:.92rem}
+@media (max-width:880px){.nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:radial-gradient(120% 90% at 20% 40%,var(--forest-2) 0%,var(--forest) 50%,var(--forest-deep) 100%);color:var(--on-dark);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.35;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-frame{position:absolute;inset:calc(14px + env(safe-area-inset-top,0px)) 14px 14px;border:1px solid var(--line-dark);pointer-events:none;z-index:1}
+.hero-frame::after{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,79,.14)}
+#sparkle{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:clamp(32px,5vw,80px);padding-block:calc(150px + env(safe-area-inset-top,0px)) 120px}
+.hero-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+.wm{position:relative;width:min(470px,100%);aspect-ratio:446/186;background:url(img/wordmark.png) center/contain no-repeat;animation:wmIn 1.6s var(--ease) both .15s}
+.wm::after{content:"";position:absolute;inset:0;-webkit-mask:url(img/wordmark.png) center/contain no-repeat;mask:url(img/wordmark.png) center/contain no-repeat;background:linear-gradient(105deg,transparent 35%,rgba(255,236,180,.95) 48%,rgba(255,255,255,1) 50%,rgba(255,236,180,.95) 52%,transparent 65%);background-size:300% 100%;background-position:120% 0;animation:shine 7s ease-in-out 1.8s infinite}
+@keyframes wmIn{from{transform:scale(.94);filter:blur(4px)}to{transform:none;filter:blur(0)}}
+@keyframes shine{0%{background-position:120% 0}22%,100%{background-position:-20% 0}}
+.hero h1{font-size:clamp(2.4rem,5vw,4.2rem);font-weight:200;letter-spacing:-.01em;line-height:1.18}
+.hero h1 b{font-weight:500}
+.hero h1 .gold-text{font-weight:400;animation:goldMove 6s ease-in-out infinite alternate}
+@keyframes goldMove{to{background-position:100% 0}}
+.hero-lead{max-width:34em;color:var(--on-dark-muted);font-size:1.08rem;font-weight:300}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.hero-copy > *:not(.wm){animation:rise 1s var(--ease) both}
+.hero-copy > :nth-child(2){animation-delay:.55s}
+.hero-copy > :nth-child(3){animation-delay:.7s}
+.hero-copy > :nth-child(4){animation-delay:.85s}
+.hero-copy > :nth-child(5){animation-delay:1s}
+@keyframes rise{from{transform:translateY(16px)}to{transform:none}}
+
+.hero-visual{position:relative;justify-self:center;width:min(420px,100%);min-width:0}
+.arch{position:relative;aspect-ratio:318/430;border-radius:999px 999px 10px 10px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px var(--line-dark);animation:archIn 1.4s var(--ease) both .3s}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:40% 50%;transform:scale(1.06);animation:breathe 9s ease-in-out infinite alternate}
+@keyframes breathe{to{transform:scale(1.12) translateY(-2%)}}
+@keyframes archIn{from{transform:translateY(24px) scale(.97)}to{transform:none}}
+.arch-line{position:absolute;inset:-16px;border:1px solid var(--line-dark);border-radius:999px 999px 14px 14px;pointer-events:none}
+.arch-line.two{inset:-30px;border-color:rgba(201,162,79,.16)}
+.arch-glow{position:absolute;inset:10% -20% -10%;z-index:-1;background:radial-gradient(closest-side,rgba(201,162,79,.28),transparent);filter:blur(20px)}
+.badge{position:absolute;inset-inline-end:-46px;bottom:56px;width:132px;height:132px;border-radius:50%;background:var(--forest-deep);box-shadow:0 0 0 1px var(--line-dark),0 20px 40px -16px rgba(0,0,0,.7);display:grid;place-items:center}
+.badge svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite}
+.badge .heart{width:22px;height:20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-scroll{position:absolute;z-index:2;bottom:34px;inset-inline-start:50%;transform:translateX(50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--on-dark-muted);font-size:.72rem;letter-spacing:.3em;text-decoration:none}
+.hero-scroll i{width:1px;height:38px;background:linear-gradient(var(--gold),transparent);animation:drip 2.4s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+@media (max-width:880px){
+  .hero-in{grid-template-columns:1fr;padding-block:calc(120px + env(safe-area-inset-top,0px)) 110px;gap:64px}
+  .hero-copy{align-items:center;text-align:center}
+  .hero-actions{justify-content:center}
+  .hero-visual{width:min(300px,78%)}
+  .badge{width:104px;height:104px;inset-inline-end:-30px;bottom:30px}
+  .hero-scroll{display:none}
+}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--gold-grad);background-size:100% 100%;color:var(--forest-deep);overflow:hidden;position:relative;border-block:1px solid rgba(255,255,255,.25)}
+.marquee-track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee ul{display:flex;align-items:center;margin:0;padding:0;list-style:none}
+.marquee li{display:flex;align-items:center;gap:28px;padding-inline:14px 14px;height:58px;font-size:1.05rem;font-weight:500;white-space:nowrap}
+.marquee li::after{content:"";width:7px;height:9px;border-radius:50% 50% 50% 50%/55% 55% 45% 45%;background:var(--forest);opacity:.75}
+@keyframes marq{to{transform:translateX(50%)}}
+.marquee:hover .marquee-track{animation-play-state:paused}
+
+/* ---------- statement ---------- */
+.statement{background:var(--ivory);padding-block:clamp(90px,12vw,160px);position:relative;overflow:hidden}
+.statement::before{content:"";position:absolute;width:560px;height:560px;inset-inline-start:-200px;top:-180px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,162,79,.14),transparent)}
+.statement-in{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(40px,7vw,110px);align-items:end;position:relative}
+.statement h2{font-size:clamp(2rem,4.3vw,3.7rem);font-weight:200;color:var(--forest);line-height:1.2;margin-top:22px}
+.statement h2 em{font-style:normal;font-weight:500}
+.statement-side{display:flex;flex-direction:column;gap:22px;color:var(--muted);font-weight:300;min-width:0;border-inline-start:1px solid var(--line-light);padding-inline-start:clamp(20px,3vw,40px)}
+.sign{display:flex;align-items:center;gap:14px;color:var(--forest);font-weight:500}
+.sign small{display:block;font-weight:300;color:var(--muted);font-size:.85rem}
+.sign .heart{width:16px;height:15px}
+@media (max-width:880px){.statement-in{grid-template-columns:1fr}}
+
+/* ---------- story ---------- */
+.story{background:var(--cream);padding-block:clamp(90px,11vw,150px);position:relative;overflow:hidden}
+.story-in{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(40px,7vw,100px);align-items:center}
+.story-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.story-copy h2{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:200;color:var(--forest)}
+.story-copy p{color:#3e4d44;font-weight:300;font-size:1.05rem;max-width:36em}
+.story-copy p:first-of-type::first-letter{font-size:3.2em;float:right;line-height:.9;margin-inline-end:10px;margin-top:6px;font-weight:200;color:var(--gold-lo)}
+.mission{position:relative;background:radial-gradient(120% 90% at 30% 10%,var(--forest-2),var(--forest) 60%,var(--forest-deep));color:var(--on-dark);border-radius:999px 999px 14px 14px;padding:clamp(90px,10vw,130px) clamp(28px,4vw,48px) clamp(40px,5vw,56px);display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center;box-shadow:0 40px 80px -36px rgba(6,37,20,.7);min-width:0}
+.mission::before{content:"";position:absolute;inset:12px;border:1px solid var(--line-dark);border-radius:999px 999px 8px 8px;pointer-events:none}
+.mission .q{font-size:5rem;line-height:.6;height:34px;font-weight:200;color:var(--gold)}
+.mission blockquote{margin:0;font-size:clamp(1.25rem,2vw,1.55rem);font-weight:300;line-height:1.55}
+.mission blockquote b{font-weight:500;color:var(--gold-hi)}
+.mission .sign{color:var(--on-dark)}
+.mission .sign small{color:var(--on-dark-muted)}
+.values{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-light);margin-top:clamp(30px,5vw,60px)}
+.value{padding:34px clamp(16px,3vw,36px) 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.value + .value{border-inline-start:1px solid var(--line-light)}
+.value h3{font-size:1.3rem;font-weight:400;color:var(--forest);display:flex;align-items:center;gap:10px}
+.value h3 .heart{width:13px;height:12px}
+.value p{color:var(--muted);font-weight:300;font-size:.95rem}
+@media (max-width:880px){.story-in{grid-template-columns:1fr}.mission{max-width:460px;justify-self:center}.values{grid-template-columns:1fr}.value + .value{border-inline-start:0;border-top:1px solid var(--line-light);margin-top:28px}}
+
+/* ---------- services ---------- */
+.dark{background:var(--forest);color:var(--on-dark)}
+.services{position:relative;padding-block:clamp(90px,11vw,150px);overflow:hidden;isolation:isolate}
+.services .cluster-bg{position:absolute;inset-inline-start:-40px;top:50%;transform:translateY(-50%);height:118%;width:auto;max-width:none;opacity:.14;z-index:-1;-webkit-mask:linear-gradient(90deg,#000 20%,transparent);mask:linear-gradient(90deg,#000 20%,transparent)}
+.sec-head{display:flex;flex-direction:column;gap:18px;max-width:640px;margin-bottom:clamp(50px,7vw,84px)}
+.sec-head h2{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:200}
+.sec-head p{color:var(--on-dark-muted);font-weight:300}
+.light .sec-head h2{color:var(--forest)}
+.light .sec-head p{color:var(--muted)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line-dark)}
+.svc{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding:52px 26px 48px;position:relative;min-width:0}
+.svc + .svc{border-inline-start:1px solid var(--line-dark)}
+.medal{width:112px;height:140px;border-radius:50%;background:var(--ivory);display:grid;place-items:center;box-shadow:0 0 0 1px var(--gold),0 0 0 7px var(--forest),0 0 0 8px var(--line-dark);transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.medal svg{width:66px;height:66px;fill:none;stroke:var(--gold-lo);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.medal svg .f{fill:var(--ivory)}
+.medal svg .g{fill:#e3c27a;stroke:none}
+.svc:hover .medal{transform:translateY(-8px) rotate(-3deg);box-shadow:0 0 0 1px var(--gold),0 0 0 7px var(--forest),0 0 0 8px var(--gold),0 26px 40px -18px rgba(201,162,79,.6)}
+.svc h3{font-size:1.3rem;font-weight:400;color:var(--on-dark);margin-top:10px}
+.svc p{color:var(--on-dark-muted);font-size:.95rem;font-weight:300;max-width:24ch}
+@media (max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}.svc:nth-child(3){border-inline-start:0}.svc:nth-child(n+3){border-top:1px solid var(--line-dark)}}
+@media (max-width:520px){.svc-grid{grid-template-columns:1fr}.svc + .svc{border-inline-start:0;border-top:1px solid var(--line-dark)}}
+
+/* ---------- gallery ---------- */
+.gallery{background:var(--cream);padding-block:clamp(90px,11vw,150px)}
+.gal-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(44px,6vw,70px)}
+.gal-top .sec-head{margin:0}
+.gal-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:auto auto;gap:clamp(16px,2.2vw,28px)}
+.tile{position:relative;margin:0;border:0;padding:0;background:var(--forest);cursor:zoom-in;overflow:hidden;border-radius:8px;display:block;width:100%;min-width:0;font:inherit;text-align:inherit}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .6s}
+.tile:hover img{transform:scale(1.045)}
+.tile.big{grid-row:span 2;border-radius:50% 50% 8px 8px/34% 34% 8px 8px;min-height:520px}
+.tile.big img{position:absolute;inset:0;object-position:58% 50%}
+.tile.b img{aspect-ratio:4/3}
+.tile.c img{aspect-ratio:16/9}
+.tile .cap{position:absolute;inset-inline-end:16px;bottom:16px;background:rgba(250,246,238,.92);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--forest);padding:8px 16px;border-radius:999px;font-size:.85rem;font-weight:500;display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+.tile .cap span{color:var(--gold-lo);font-weight:400}
+.tile.big .cap{inset-inline-end:50%;transform:translateX(-50%);bottom:22px;white-space:nowrap}
+.tile::after{content:"";position:absolute;inset:10px;border:1px solid rgba(239,213,154,.0);border-radius:inherit;transition:border-color .6s;pointer-events:none}
+.tile:hover::after{border-color:rgba(239,213,154,.65)}
+@media (max-width:820px){.gal-grid{grid-template-columns:1fr}.tile.big{grid-row:auto;min-height:0;aspect-ratio:4/4.2}}
+.lightbox{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;overflow:visible}
+.lightbox::backdrop{background:rgba(3,22,11,.88);backdrop-filter:blur(6px)}
+.lightbox img{max-height:84vh;width:auto;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox p{color:var(--on-dark);text-align:center;margin-top:14px;font-weight:300}
+.lb-close{position:absolute;top:-18px;inset-inline-end:-18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--gold-grad);color:var(--forest-deep);font-size:1.4rem;cursor:pointer;line-height:1}
+
+/* ---------- process ---------- */
+.process{background:var(--ivory);padding-block:clamp(90px,11vw,150px);overflow:hidden}
+.steps-wrap{position:relative}.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;list-style:none;margin:0;padding:0}
+.steps-string{position:absolute;inset-inline:6%;top:20px;height:90px;width:88%;pointer-events:none}
+.step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;min-width:0}
+.balloon{position:relative;width:74px;height:88px;border-radius:50% 50% 48% 48%/54% 54% 46% 46%;display:grid;place-items:center;font-size:1.6rem;font-weight:300;color:var(--forest-deep);background:radial-gradient(circle at 34% 28%,#fff8dc 0 6%,#f1d697 16%,#cfa452 45%,#946a1f 80%,#6b4a12 100%);box-shadow:inset -6px -10px 18px rgba(80,50,5,.35),0 18px 26px -14px rgba(120,85,20,.55);transform-origin:50% 100%;transition:transform .42s cubic-bezier(.34,1.8,.64,1),box-shadow .42s var(--ease),filter .42s}
+.steps-string{transform:scaleX(-1);overflow:visible}
+.steps-string .flow{animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-20}}
+.steps-string .prog{stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset .55s cubic-bezier(.4,0,.2,1);filter:drop-shadow(0 0 4px rgba(239,213,154,.9))}
+.step.active .balloon{transform:scale(1.32) translateY(-6px);box-shadow:inset -6px -10px 18px rgba(80,50,5,.35),0 26px 34px -14px rgba(120,85,20,.6),0 0 0 10px rgba(201,162,79,.12);filter:saturate(1.15) brightness(1.05)}
+.step h3{transition:color .6s}
+.step.active h3{color:var(--gold-lo)}
+.balloon.g{background:radial-gradient(circle at 34% 28%,#bfe0cc 0 5%,#3f7a5a 18%,#124a2e 50%,#062514 88%);color:var(--gold-hi)}
+.balloon.p{background:radial-gradient(circle at 34% 28%,#ffffff 0 8%,#f7f1e3 22%,#e0d4bb 55%,#b7a685 92%)}
+.balloon::after{content:"";position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom:8px solid #8f6a22;border-top:0}
+.balloon.g::after{border-bottom-color:#0b3520}
+.balloon.p::after{border-bottom-color:#b7a685}
+.step .str{width:1px;height:30px;background:linear-gradient(var(--gold-lo),transparent);margin-top:-6px}
+.step h3{font-size:1.2rem;font-weight:500;color:var(--forest)}
+.step p{color:var(--muted);font-size:.95rem;font-weight:300;max-width:26ch}
+@media (max-width:880px){.steps{grid-template-columns:repeat(2,1fr);row-gap:56px}.steps-string{display:none}}
+@media (max-width:460px){.steps{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{position:relative;padding-block:clamp(90px,11vw,150px);overflow:hidden;isolation:isolate;background:radial-gradient(110% 80% at 85% 10%,var(--forest-2),var(--forest) 55%,var(--forest-deep))}
+.contact-frame{position:absolute;inset:14px;border:1px solid var(--line-dark);pointer-events:none}
+.contact .cluster-side{position:absolute;inset-inline-end:0;bottom:0;height:88%;width:auto;max-width:none;z-index:-1;opacity:.5;-webkit-mask:linear-gradient(270deg,#000 30%,transparent);mask:linear-gradient(270deg,#000 30%,transparent);}
+.contact-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.contact-copy{display:flex;flex-direction:column;gap:24px;min-width:0}
+.contact h2{font-size:clamp(2.1rem,4vw,3.4rem);font-weight:200}
+.contact-copy > p{color:var(--on-dark-muted);font-weight:300;max-width:32em}
+.phone{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.phone small{color:var(--gold);letter-spacing:.2em;font-size:.78rem}
+.phone .num{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:200;letter-spacing:.04em;direction:ltr;text-align:right;user-select:all;line-height:1.1}
+.contact-row{display:flex;flex-wrap:wrap;gap:12px}
+.chip-btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;border:0;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--line-dark);color:var(--on-dark);font:400 .92rem/1 var(--font);text-decoration:none;cursor:pointer;transition:box-shadow .3s,color .3s,background .3s}
+.chip-btn:hover{box-shadow:inset 0 0 0 1px var(--gold);color:var(--gold-hi);background:rgba(201,162,79,.08)}
+.chip-btn svg{width:17px;height:17px}
+.mail{display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:var(--on-dark-muted);font-weight:300;padding-top:22px;border-top:1px solid var(--line-dark)}
+.mail span{direction:ltr;user-select:all;color:var(--on-dark);overflow-wrap:anywhere}
+.toast{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--ivory);color:var(--forest);padding:12px 22px;border-radius:999px;font-weight:500;box-shadow:0 20px 40px -10px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.4s var(--ease);z-index:90}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.planner{background:var(--ivory);color:var(--ink);border-radius:20px;padding:clamp(24px,3.5vw,40px);box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(201,162,79,.5);display:flex;flex-direction:column;gap:22px;min-width:0;position:relative}
+.planner::before{content:"";position:absolute;inset:8px;border:1px solid var(--line-light);border-radius:14px;pointer-events:none}
+.planner h3{font-size:1.5rem;font-weight:400;color:var(--forest)}
+.planner > header p{color:var(--muted);font-size:.95rem;font-weight:300;margin-top:4px}
+.field{display:flex;flex-direction:column;gap:10px;border:0;padding:0;margin:0;min-width:0}
+.field legend,.field > label{font-size:.82rem;font-weight:600;letter-spacing:.06em;color:var(--gold-lo);padding:0;margin-bottom:10px}
+.field > label{margin-bottom:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{display:inline-flex;align-items:center;height:38px;padding:0 15px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px #ddd2bd;font-size:.9rem;cursor:pointer;transition:.25s;user-select:none}
+.chips label:hover{box-shadow:inset 0 0 0 1px var(--gold)}
+.chips input:checked + label{background:var(--forest);color:var(--gold-hi);box-shadow:inset 0 0 0 1px var(--forest)}
+.chips input:focus-visible + label{outline:2px solid var(--gold);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.input{height:46px;border-radius:10px;border:1px solid #ddd2bd;background:#fff;padding:0 14px;font:400 .95rem var(--font);color:var(--ink);width:100%;min-width:0}
+.input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,79,.2)}
+.preview{background:#e9f3e3;border-radius:14px 14px 4px 14px;padding:14px 16px;font-size:.88rem;line-height:1.6;white-space:pre-line;color:#21352a;position:relative;min-height:70px}
+.preview::before{content:"תצוגה מקדימה של ההודעה";display:block;font-size:.72rem;letter-spacing:.08em;color:#5f7a66;margin-bottom:6px;font-weight:500}
+.planner .btn{width:100%}
+.btn-forest{background:var(--forest);color:var(--gold-hi);box-shadow:0 14px 30px -14px rgba(6,37,20,.8)}
+.btn-forest:hover{background:var(--forest-2);transform:translateY(-2px)}
+@media (max-width:940px){.contact-in{grid-template-columns:1fr}}
+@media (max-width:460px){.row2{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.foot{background:var(--forest-deep);color:var(--on-dark-muted);padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));font-size:.88rem;font-weight:300}
+.foot-in{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.foot img{width:200px;height:auto;opacity:.95}
+.foot nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px}
+.foot nav a{text-decoration:none;color:var(--on-dark)}
+.foot nav a:hover{color:var(--gold-hi)}
+.foot .rule{width:min(380px,100%)}
+
+/* ---------- scroll reveal (progressive; content is visible without it) ---------- */
+@supports (animation-timeline: view()){
+  .reveal{animation:revealUp linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  @keyframes revealUp{from{opacity:.15;transform:translateY(40px)}to{opacity:1;transform:none}}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+
+<a class="skip" href="#main">דילוג לתוכן</a>
+
+<header class="site-head" id="head">
+<meta name="robots" content="noindex, nofollow">
+<style>/* תצוגה בתוך עמוד הדוגמאות */.toast{display:none!important}</style>
+  <div class="wrap head-in">
+    <a class="brand" href="#top" aria-label="HAREL מנפחים אירועים, לראש העמוד"><img src="img/wordmark.png" alt="HAREL מנפחים אירועים"></a>
+    <nav class="nav" aria-label="ניווט ראשי">
+      <a href="#services">שירותים</a>
+      <a href="#work">עבודות</a>
+      <a href="#process">איך זה עובד</a>
+      <a href="#contact">יצירת קשר</a>
+    </nav>
+    <a class="btn btn-gold head-cta" href="#contact">הזמנת עיצוב</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <canvas id="sparkle" aria-hidden="true"></canvas>
+    <div class="hero-frame" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <div class="wm" role="img" aria-label="HAREL מנפחים אירועים"></div>
+        <span class="eyebrow">רות הראל · HAREL</span>
+        <h1 id="hero-title">עיצובי בלונים <span class="gold-text">לאירועים</span></h1>
+        <p class="hero-lead">עיצוב בהתאמה אישית של קירות בלונים, שערי כניסה, עיצוב שולחנות ובר קינוחים. הצבעים והגודל מותאמים למקום ולאירוע.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="9" rx="6" ry="7"/><path d="M12 16l-1.2 1.6h2.4z"/><path d="M12 17.6c0 2 1.5 2.5 1 4.4"/></svg>
+            תכנון האירוע שלי
+          </a>
+          <a class="btn btn-ghost" href="#work">לצפייה בעבודות</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="arch-glow"></div>
+        <div class="arch-line two"></div>
+        <div class="arch-line"></div>
+        <div class="arch"><img src="img/cluster.png" alt=""></div>
+        <div class="badge">
+          <svg class="ring" viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text direction="ltr" unicode-bidi="embed" style="direction:ltr" font-family="Heebo, Arial, sans-serif" font-size="15.5" letter-spacing="5.2" fill="#c9a24f"><textPath href="#circ">HAREL • BALLOON DESIGN • EVENTS •</textPath></text></svg>
+          <span class="heart"></span>
+        </div>
+      </div>
+    </div>
+    <a class="hero-scroll" href="#intro" aria-label="גלילה לתוכן"><span>גלילה</span><i></i></a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-label="סוגי אירועים">
+    <div class="marquee-track">
+      <ul>
+        <li>ברית ובריתה</li><li>בר מצווה</li><li>בת מצווה</li><li>חתונה</li><li>יום הולדת</li><li>חינה</li><li>אירועי חברה</li><li>פתיחת שנת לימודים</li><li>שערי כניסה</li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>ברית ובריתה</li><li>בר מצווה</li><li>בת מצווה</li><li>חתונה</li><li>יום הולדת</li><li>חינה</li><li>אירועי חברה</li><li>פתיחת שנת לימודים</li><li>שערי כניסה</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="statement" id="intro" aria-labelledby="intro-title">
+    <div class="wrap statement-in">
+      <div class="reveal">
+        <span class="eyebrow">נעים להכיר</span>
+        <h2 id="intro-title">עיצוב מדויק <em>לפרטים הקטנים</em></h2>
+      </div>
+      <div class="statement-side reveal">
+        <p>אני רות, ומאחורי HAREL עומדת עבודה מוקפדת על צבעים, גבהים והתאמה למקום. ירוק עמוק, זהב, שמנת או כל שילוב שמתאים לאירוע, נבנה יחד איתך לפי הצרכים והאווירה.</p>
+        <div class="sign"><span class="heart"></span><div>רות הראל<small>מעצבת בלונים ואירועים</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story" aria-labelledby="story-title">
+    <div class="wrap story-in">
+      <div class="story-copy reveal">
+        <span class="eyebrow">הסיפור שלי</span>
+        <h2 id="story-title">איך הכול <span class="gold-text">התחיל</span></h2>
+        <p>הכול התחיל מיום הולדת לבת שלי. רציתי פינה שמחה בסלון, וביליתי עד שתיים בלילה בסידור וניפוח בלונים עד שהתוצאה התאימה למה שדמיינתי.</p>
+        <p>בבוקר ראיתי את ההתלהבות שלה, ובהמשך אורחים התעניינו מי עיצב את הפינה. משם זה המשיך לאירועים נוספים.</p>
+        <p>מאז עיצבתי לבריתות, בר ובת מצווה, חתונות, ימי הולדת ופתיחת שנת לימודים. כל אירוע מקבל יחס מלא ותשומת לב לפרטים.</p>
+      </div>
+      <aside class="mission reveal" aria-label="המטרה של רות">
+        <span class="q" aria-hidden="true">”</span>
+        <blockquote>בלון מכניס <b>שמחה</b> וצבע לחלל בצורה מהירה ופשוטה. המטרה שלי היא שהעיצוב ישתלב בטבעיות באירוע ויתאים <b>בדיוק</b> למה שרצית.</blockquote>
+        <div class="rule" style="width:70%"><span class="heart"></span></div>
+        <div class="sign"><div>רות הראל<small>HAREL עיצובי בלונים</small></div></div>
+      </aside>
+      <div class="values">
+        <div class="value reveal"><h3><span class="heart"></span>שמחה</h3><p>להכניס צבע ואווירה טובה כבר מהכניסה.</p></div>
+        <div class="value reveal"><h3><span class="heart"></span>דיוק</h3><p>התאמת צבעים, גבהים וגודל למקום.</p></div>
+        <div class="value reveal"><h3><span class="heart"></span>יחס אישי</h3><p>זמינות והקשבה מהשיחה הראשונה ועד ההקמה.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services dark" id="services" aria-labelledby="svc-title">
+    <img class="cluster-bg" src="img/cluster.png" alt="" aria-hidden="true">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">מה אפשר להזמין</span>
+        <h2 id="svc-title">ארבע אפשרויות <span class="gold-text">עיצוב</span></h2>
+        <p>אפשר להזמין פריט בודד או שילוב של כמה אלמנטים באותם צבעים וסגנון.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc reveal">
+          <div class="medal"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M23 33c2 7 9 13 9 23M41 30c-1 8-8 14-9 26M33 43c0 5-1 9-1 13"/><ellipse class="f" cx="23" cy="20" rx="9.5" ry="11.5"/><ellipse class="f" cx="41" cy="18" rx="9.5" ry="11.5"/><ellipse class="f" cx="33" cy="31" rx="8.5" ry="10.5"/><path class="g" d="M19 15a5 6 0 0 1 4-4" style="stroke:#e3c27a;fill:none"/><path class="g" d="M37 13a5 6 0 0 1 4-4" style="stroke:#e3c27a;fill:none"/></svg></div>
+          <h3>קיר בלונים</h3>
+          <p>קשתות, קירות ושילובים אורגניים לכניסה או לרקע צילום.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="medal"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 36V14M32 30l-8-12M32 28l9-13M32 33l-11-6M32 32l12-7"/><circle class="g" cx="32" cy="12" r="2.6"/><circle class="g" cx="23" cy="16.5" r="2.4"/><circle class="g" cx="42" cy="13.5" r="2.4"/><circle class="g" cx="19.5" cy="26" r="2.2"/><circle class="g" cx="45" cy="24" r="2.2"/><path class="f" d="M26 36h12l-1 4c5 3 6 8 6 12 0 4-4 6-11 6s-11-2-11-6c0-4 1-9 6-12z"/><path d="M24 48h16"/></svg></div>
+          <h3>עיצוב שולחנות</h3>
+          <p>מרכזי שולחן, פרחים ובלונים בגובה מתאים שלא מפריע ליושבים.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="medal"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="f" d="M17 31h30v24H17z"/><path class="f" d="M14 24h36v7H14z"/><path d="M32 24v31"/><path class="g" d="M29.5 24h5v31h-5z" style="opacity:.55"/><path d="M32 24c-3-7-13-9-11-3 1.5 3.5 11 3 11 3s9.5.5 11-3c2-6-8-4-11 3z"/></svg></div>
+          <h3>מתנות בעיצוב אישי</h3>
+          <p>בלון שקוף עם שם, מארז מתנה ובובה בפנים, מוכן לאירוע.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="medal"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="f" d="M20 37l4 18h16l4-18z"/><path d="M27 38l1.5 17M37 38l-1.5 17M32 38v17"/><path class="f" d="M18 37c-2-7 4-9 6-9 0-7 4-9 8-9s8 2 8 9c2 0 8 2 6 9z"/><circle class="g" cx="32" cy="15" r="3.4"/><path d="M32 12c1-3 3-4 5-4"/></svg></div>
+          <h3>עיצוב בר קינוחים</h3>
+          <p>שולחן מתוקים מעוצב בצבעי האירוע עם רקע בלונים, שלטים ומעמדים תואמים.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery light" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="gal-top">
+        <div class="sec-head reveal">
+          <span class="eyebrow">מהאירועים שלנו</span>
+          <h2 id="work-title">פלטות וצבעים <span class="gold-text">לאירועים</span></h2>
+          <p>ירוק וזהב לאירוע חגיגי, גווני ניוד לברית, תכלת וורוד לשער כניסה. בוחרים יחד את הצבעים שמתאימים למקום.</p>
+        </div>
+        <a class="btn btn-forest" href="#contact">רוצה עיצוב כזה?</a>
+      </div>
+      <div class="gal-grid">
+        <button class="tile big reveal" type="button" data-full="img/green-gold.jpg" data-cap="קיר בלונים בירוק, זהב ופנינה · Welcome Baby Boy">
+          <img src="img/green-gold.jpg" alt="קיר בלונים בירוק כהה, זהב ופנינה ליד קשת לבנה עם הכיתוב Welcome Baby Boy, קוביות BABY ודובי בתוך סל" loading="lazy">
+          <span class="cap">ירוק־זהב <span>· אירוע שמחה</span></span>
+        </button>
+        <button class="tile b reveal" type="button" data-full="img/gate.jpg" data-cap="שער בלונים בתכלת, ורוד וזהב · פתיחת שנת הלימודים">
+          <img src="img/gate.jpg" alt="שער בלונים בתכלת, ורוד וזהב בכניסה לבית ספר, מתחת לשלט פתיחת שנת הלימודים" loading="lazy">
+          <span class="cap">שער כניסה <span>· פתיחת שנה</span></span>
+        </button>
+        <button class="tile c reveal" type="button" data-full="img/brit.jpg" data-cap="עיצוב לברית בגווני נוד, שמנת וחום · Welcome Baby Boy">
+          <img src="img/brit.jpg" alt="עיצוב בלונים לברית בגווני נוד, שמנת וחום ליד קשת לבנה, בלוני תכלת ודובי גדול" loading="lazy">
+          <span class="cap">גווני ניוד <span>· ברית</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="lightbox" id="lb" aria-label="תמונה מוגדלת">
+    <button class="lb-close" type="button" id="lb-close" aria-label="סגירה">×</button>
+    <img id="lb-img" src="img/green-gold.jpg" alt="">
+    <p id="lb-cap"></p>
+  </dialog>
+
+  <!-- PROCESS -->
+  <section class="process light" id="process" aria-labelledby="proc-title">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">איך זה עובד</span>
+        <h2 id="proc-title">ארבעה שלבים <span class="gold-text">פשוטים</span></h2>
+      </div>
+      <div class="steps-wrap">
+        <svg class="steps-string" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#94701f"/><stop offset=".5" stop-color="#efd59a"/><stop offset="1" stop-color="#c9a24f"/></linearGradient></defs><path class="flow" d="M0 40 C 120 90, 200 -5, 333 40 S 560 90, 666 40 S 880 -5, 1000 40" fill="none" stroke="#c9a24f" stroke-width="1.2" stroke-dasharray="3 7" opacity=".7"/><path class="prog" id="prog" pathLength="1000" d="M0 40 C 120 90, 200 -5, 333 40 S 560 90, 666 40 S 880 -5, 1000 40" fill="none" stroke="url(#sg)" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <ol class="steps">
+        <li class="step reveal"><div class="balloon">1</div><i class="str"></i><h3>שיחת היכרות</h3><p>מעדכנים על סוג האירוע, תאריך, מיקום והסגנון הרצוי.</p></li>
+        <li class="step reveal"><div class="balloon g">2</div><i class="str"></i><h3>קונספט וצבעים</h3><p>בוחרים פלטת צבעים, גודל וסגנון ומקבלים הצעה מסודרת.</p></li>
+        <li class="step reveal"><div class="balloon p">3</div><i class="str"></i><h3>הקמה במקום</h3><p>מגיעה לפני האירוע ומקימה את העיצוב בשטח.</p></li>
+        <li class="step reveal"><div class="balloon">4</div><i class="str"></i><h3>התחלת האירוע</h3><p>העיצוב מוכן ומחכה לאורחים.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact dark" id="contact" aria-labelledby="contact-title">
+    <div class="contact-frame" aria-hidden="true"></div>
+    <img class="cluster-side" src="img/cluster.png" alt="" aria-hidden="true">
+    <div class="wrap contact-in">
+      <div class="contact-copy">
+        <span class="eyebrow">להזמנות: רות</span>
+        <h2 id="contact-title">שריון תאריך <span class="gold-text">לאירוע</span></h2>
+        <p>תאריכים נתפסים מראש בעונות האירועים. מומלץ לפנות מוקדם, ואפשר לשאול שאלות לפני סגירה.</p>
+        <div class="phone">
+          <small>טלפון ווואטסאפ</small>
+          <span class="num" id="phone">052-7139676</span>
+        </div>
+        <div class="contact-row">
+          <a class="chip-btn" href="https://wa.me/972527139676" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.7-.3z"/></svg>
+            וואטסאפ
+          </a>
+          <a class="chip-btn" href="tel:+972527139676">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            חיוג
+          </a>
+          <button class="chip-btn" type="button" data-copy="052-7139676" data-msg="המספר הועתק">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+            העתקת המספר
+          </button>
+        </div>
+        <div class="mail">
+          מייל: <span id="email">rh0527139676@gmail.com</span>
+          <button class="chip-btn" type="button" data-copy="rh0527139676@gmail.com" data-msg="המייל הועתק">העתקה</button>
+        </div>
+      </div>
+
+      <form class="planner" id="planner" novalidate>
+        <header>
+          <h3>תכנון מהיר בוואטסאפ</h3>
+          <p>כמה פרטים קצרים להכנת ההודעה:</p>
+        </header>
+        <fieldset class="field">
+          <legend>סוג האירוע</legend>
+          <div class="chips" id="ev">
+            <input type="radio" name="ev" id="ev1" value="ברית / בריתה"><label for="ev1">ברית / בריתה</label>
+            <input type="radio" name="ev" id="ev2" value="בר / בת מצווה"><label for="ev2">בר / בת מצווה</label>
+            <input type="radio" name="ev" id="ev3" value="חתונה"><label for="ev3">חתונה</label>
+            <input type="radio" name="ev" id="ev4" value="יום הולדת"><label for="ev4">יום הולדת</label>
+            <input type="radio" name="ev" id="ev5" value="בייבי שאוור"><label for="ev5">בייבי שאוור</label>
+            <input type="radio" name="ev" id="ev6" value="אירוע חברה או מוסד"><label for="ev6">חברה או מוסד</label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>מה מעניין אותך</legend>
+          <div class="chips">
+            <input type="checkbox" name="svc" id="s1" value="קיר בלונים"><label for="s1">קיר בלונים</label>
+            <input type="checkbox" name="svc" id="s2" value="עיצוב שולחנות"><label for="s2">עיצוב שולחנות</label>
+            <input type="checkbox" name="svc" id="s3" value="מתנה בעיצוב אישי"><label for="s3">מתנה בעיצוב אישי</label>
+            <input type="checkbox" name="svc" id="s4" value="בר קינוחים"><label for="s4">בר קינוחים</label>
+          </div>
+        </fieldset>
+        <div class="row2">
+          <div class="field"><label for="date">תאריך האירוע</label><input class="input" type="date" id="date"></div>
+          <div class="field"><label for="city">עיר או אולם</label><input class="input" type="text" id="city" placeholder="לדוגמה: אולמי הגן, פתח תקווה" autocomplete="off"></div>
+        </div>
+        <div class="preview" id="preview" aria-live="polite"></div>
+        <a class="btn btn-forest" id="send" href="https://wa.me/972527139676" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          שליחת הפרטים לרות בוואטסאפ
+        </a>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <img src="img/wordmark.png" alt="HAREL מנפחים אירועים">
+    <div class="rule"><span class="heart"></span></div>
+    <nav aria-label="ניווט תחתון"><a href="#services">שירותים</a><a href="#work">עבודות</a><a href="#process">איך זה עובד</a><a href="#contact">יצירת קשר</a></nav>
+    <p>להזמנות: רות · <span dir="ltr">052-7139676</span></p>
+    <p>© 2026 HAREL עיצובי בלונים</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* header state */
+  var head = document.getElementById('head');
+  function onScroll(){ head.classList.toggle('scrolled', window.scrollY > 40); }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* hero canvas: gold glitter + soft out-of-focus balloons drifting up */
+  var cv = document.getElementById('sparkle'), ctx = cv.getContext('2d');
+  var W=0,H=0,dpr=1, parts=[], bokeh=[], mx=0, my=0, tmx=0, tmy=0, running=true, last=0;
+  var palettes = [
+    ['rgba(255,246,214,1)','rgba(226,186,104,.9)','rgba(150,110,35,.0)'],
+    ['rgba(255,255,255,1)','rgba(232,224,204,.85)','rgba(180,165,135,0)'],
+    ['rgba(120,180,145,.9)','rgba(25,85,55,.8)','rgba(6,37,20,0)']
+  ];
+  function sprite(r, pal){
+    var c = document.createElement('canvas'), s = Math.ceil(r*2.6);
+    c.width = s; c.height = s*1.15; var g = c.getContext('2d');
+    var cx = s/2, cy = s*0.55;
+    var gr = g.createRadialGradient(cx - r*.35, cy - r*.4, r*.05, cx, cy, r*1.25);
+    gr.addColorStop(0, pal[0]); gr.addColorStop(.45, pal[1]); gr.addColorStop(1, pal[2]);
+    g.fillStyle = gr; g.beginPath(); g.ellipse(cx, cy, r*1.2, r*1.35, 0, 0, Math.PI*2); g.fill();
+    return c;
+  }
+  function size(){
+    var r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio||1, 2);
+    W = r.width; H = r.height; cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n = Math.round(Math.min(90, W*H/14000));
+    parts = []; for (var i=0;i<n;i++) parts.push(newPart(true));
+    bokeh = []; var bn = W < 700 ? 4 : 8;
+    for (var j=0;j<bn;j++){
+      var rr = 14 + Math.random()*38, z = .3 + Math.random()*.7;
+      bokeh.push({x:Math.random()*W, y:Math.random()*H, r:rr, z:z, vy:6+z*14, ph:Math.random()*6.28, img:sprite(rr, palettes[j%3]), a:.18+z*.22});
+    }
+  }
+  function newPart(init){
+    return {x:Math.random()*W, y:init?Math.random()*H:H+10, s:.4+Math.random()*1.6, vy:4+Math.random()*12, ph:Math.random()*6.28, sp:.6+Math.random()*2.2, z:Math.random()};
+  }
+  function frame(t){
+    if (!running) return;
+    var dt = Math.min(.05, (t-last)/1000 || 0); last = t;
+    mx += (tmx-mx)*.04; my += (tmy-my)*.04;
+    ctx.clearRect(0,0,W,H);
+    for (var b of bokeh){
+      if (!reduce){ b.y -= b.vy*dt; b.ph += dt*.6; if (b.y < -b.r*3){ b.y = H + b.r*2; b.x = Math.random()*W; } }
+      var x = b.x + Math.sin(b.ph)*14 + mx*b.z*28, y = b.y + my*b.z*18;
+      ctx.globalAlpha = b.a; ctx.drawImage(b.img, x - b.img.width/2, y - b.img.height/2);
+      ctx.globalAlpha = b.a*.5; ctx.strokeStyle = 'rgba(201,162,79,.6)'; ctx.lineWidth = .6;
+      ctx.beginPath(); ctx.moveTo(x, y + b.r*1.0); ctx.quadraticCurveTo(x + Math.sin(b.ph*1.3)*8, y + b.r*2.2, x - 4, y + b.r*3.4); ctx.stroke();
+    }
+    for (var p of parts){
+      if (!reduce){ p.y -= p.vy*dt; p.ph += dt*p.sp; if (p.y < -10){ Object.assign(p, newPart(false)); } }
+      var tw = reduce ? .7 : (Math.sin(p.ph)*.5+.5);
+      var px = p.x + mx*p.z*16, py = p.y + my*p.z*10;
+      ctx.globalAlpha = .25 + tw*.75;
+      ctx.fillStyle = p.z > .7 ? '#f4dfa6' : '#c9a24f';
+      ctx.beginPath(); ctx.arc(px, py, p.s*(.6+tw*.5), 0, 6.283); ctx.fill();
+      if (p.s > 1.5 && tw > .85){
+        ctx.globalAlpha = (tw-.85)*4; ctx.strokeStyle = '#fff3cf'; ctx.lineWidth = .7;
+        var L = p.s*5; ctx.beginPath(); ctx.moveTo(px-L,py); ctx.lineTo(px+L,py); ctx.moveTo(px,py-L); ctx.lineTo(px,py+L); ctx.stroke();
+      }
+    }
+    ctx.globalAlpha = 1;
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  size(); requestAnimationFrame(function(t){ last=t; frame(t); });
+  var rt; addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ size(); if (reduce) frame(last); }, 150); });
+  var hero = document.querySelector('.hero');
+  hero.addEventListener('pointermove', function(e){ var r = hero.getBoundingClientRect(); tmx = (e.clientX - r.left)/r.width - .5; tmy = (e.clientY - r.top)/r.height - .5; });
+  if ('IntersectionObserver' in window && !reduce){
+    new IntersectionObserver(function(es){ var vis = es[0].isIntersecting; if (vis && !running){ running = true; requestAnimationFrame(function(t){ last=t; frame(t); }); } else if (!vis) running = false; }).observe(hero);
+  }
+
+  /* process: each balloon grows in turn while the section is on screen */
+  var steps = document.querySelectorAll('.step'), si = -1, sTimer = null;
+  var prog = document.getElementById('prog'), stops = [74, 358, 642, 926];
+  function nextStep(){
+    steps.forEach(function(s){ s.classList.remove('active'); });
+    si = (si + 1) % steps.length; steps[si].classList.add('active');
+    if (prog) prog.style.strokeDashoffset = 1000 - stops[si];
+  }
+  if (!reduce && steps.length && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      if (es[0].isIntersecting){ if (!sTimer){ nextStep(); sTimer = setInterval(nextStep, 1000); } }
+      else { clearInterval(sTimer); sTimer = null; si = -1; steps.forEach(function(s){ s.classList.remove('active'); }); if (prog) prog.style.strokeDashoffset = 1000; }
+    }, {threshold:.35}).observe(document.querySelector('.steps'));
+  }
+
+  /* lightbox */
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
+  document.querySelectorAll('.tile').forEach(function(t){
+    t.addEventListener('click', function(){
+      lbImg.src = t.dataset.full; lbImg.alt = t.querySelector('img').alt; lbCap.textContent = t.dataset.cap;
+      if (lb.showModal) lb.showModal();
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', function(){ lb.close(); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) lb.close(); });
+
+  /* copy buttons */
+  var toast = document.getElementById('toast'), tt;
+  function say(m){ toast.textContent = m; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 2200); }
+  function selectText(txt){
+    var el = txt.indexOf('@') > -1 ? document.getElementById('email') : document.getElementById('phone');
+    var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = b.dataset.copy, m = b.dataset.msg;
+      try {
+        navigator.clipboard.writeText(v).then(function(){ say(m); }, function(){ selectText(v); say('הטקסט מסומן, אפשר להעתיק'); });
+      } catch(e){ selectText(v); say('הטקסט מסומן, אפשר להעתיק'); }
+    });
+  });
+
+  /* WhatsApp planner */
+  var form = document.getElementById('planner'), prev = document.getElementById('preview'), send = document.getElementById('send');
+  function fmtDate(v){ if (!v) return ''; var p = v.split('-'); return p[2] + '.' + p[1] + '.' + p[0]; }
+  function build(){
+    var ev = form.querySelector('input[name=ev]:checked');
+    var svcs = Array.prototype.map.call(form.querySelectorAll('input[name=svc]:checked'), function(i){ return i.value; });
+    var d = fmtDate(document.getElementById('date').value), c = document.getElementById('city').value.trim();
+    var lines = ['היי רות, הגעתי מהאתר של HAREL 🎈'];
+    lines.push(ev ? 'אשמח לשמוע על עיצוב בלונים ל' + ev.value + '.' : 'אשמח לשמוע על עיצוב בלונים לאירוע.');
+    if (svcs.length) lines.push('מה מעניין אותי: ' + svcs.join(', '));
+    if (d) lines.push('תאריך: ' + d);
+    if (c) lines.push('מקום: ' + c);
+    var msg = lines.join('\n');
+    prev.textContent = msg;
+    send.href = 'https://wa.me/972527139676?text=' + encodeURIComponent(msg);
+  }
+  form.addEventListener('input', build); form.addEventListener('change', build);
+  form.addEventListener('submit', function(e){ e.preventDefault(); });
+  build();
+})();
+</script>
